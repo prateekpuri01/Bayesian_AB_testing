@@ -1,1 +1,2 @@
 *.frequentist_results.pkl
+*.bayesian_results.pkl
