@@ -1,2 +1,4 @@
-*.frequentist_results.pkl
-*.bayesian_results.pkl
+*frequentist_results.pkl
+*bayesian_results.pkl
+*.pkl
+/.ipynb_checkpoints/
