@@ -30,8 +30,35 @@ $L=\int \int P(A) P(B) (A-B) dA dB$
 
 In Bayesian AB testing, if this expected loss is less than a pre-determined $\epsilon$, you stop the experiment. Picking $\epsilon$ takes some consideration, but once it is selected your sample size will be whatever is takes to reduce your expected loss to that amount. Did you significantly underestimate your effect size? Not a big problem, the real effect size will become evident in your data and your experiment will stop without requiring additional samples. 
 
+![alt text](https://github.com/prateekpuri01/Bayesian_AB_testing/blob/master/plots/expected_loss.png)
+
+The above plot shows how the expected loss may vary as a function of sample size for both treatment and control groups in an experiment
+
 The tradeoff here is that the smaller sample size comes at the expense of a higher false-positive rate i.e. if two treatment have identical effects, you may get *unlucky* and perceive one as having an effect just due to statistical fluctuations early on in your experiment. Under an AB test, these fluctuations wouldn't have affected your result since you would have collected more samples, but in a Bayesian approach it might.
 
-## Bayesian approaches
+## Simulations
 
-Let's compare some simulations to see the benefits/tradeoffs of these two approaches. Let's 
+Let's compare some simulations to see the benefits/tradeoffs of these two approaches. Let's say that we are trying to determine whether a new website increase checkout cart conversion rates. Fot each site version, checkout conversion is essentially a Bernoulli process with an unknwown success rate. In our frequentist approach, we can use CLT to convert the hypothesis test into an effective Z-test, whereas for the Bayesian approach, we will model our system with an uninformative Beta prior and use our samples to update the prior. 
+
+Let's say our base conversion rate is .02% and we expect a 20% increase due to the new site, we want alpha=.95 with a power=0.8. Using these values, we would need over 100000 samples to reach a conduct a frequentist AB test. 
+
+Let's say we do that. Now let's use our Bayesian AB test and perform the same experiment, and now let's compare the results
+
+I simulated 500 such experiments, and the following plots show the distribution of final control/treatment conversion rates 
+
+**Bayesian**
+
+![alt text](https://github.com/prateekpuri01/Bayesian_AB_testing/blob/master/plots/bayesian_conversion_rates.png)
+
+**Frequentist**
+
+![alt text](https://github.com/prateekpuri01/Bayesian_AB_testing/blob/master/plots/freq_conv_rates.png)
+
+As can be seen, the frequentist control rates are much better defined, as you would expect given the number of samples. But what at what cost? 
+
+Here is a historgram of the number of samples taken in each experiment for both cases (constant numnber of samples used for frequentist test)
+
+![alt text](https://github.com/prateekpuri01/Bayesian_AB_testing/blob/master/plots/sample_size_comparison.png)
+
+
+
