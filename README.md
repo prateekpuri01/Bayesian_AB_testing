@@ -20,6 +20,10 @@ The idea is that you then run your experiment with that target number of sample 
 
 Bayesian AB testing is different in multiple ways. In frequetist statistics, researchers typically calculate a confidence interval that they say is likely to include the true parameter they are estimating with some degree of certainty. This can be a somewhat un-natural way to think about estimates. In the Bayesian approach, popiulation parameters are treated as random variables, with a probability distribution that has been formed by our prior beliefs. As we obtain more data from the world, we update our beliefs, and the probabiity distributions update accordingly. 
 
+![alt text](https://github.com/prateekpuri01/Bayesian_AB_testing/blob/master/plots/bayesian_hist_continuous.png)
+
+For example, the above plot shows two Bayesian PDF plots for a hypothetical situaiton of checkout conversion rates for two different versions of a website
+
 Since these probability distributions are dynamics, if you are testing for difference between two groups, you can compare their distributions after any given number of samples. Lets say A and B are our two groups P(A) and P(B) describe their probability distribtuons. You can calculate the expected loss of adopting A over B (and vice versa) as:
 
 $L=\int \int P(A) P(B) (A-B) dA dB$ 
