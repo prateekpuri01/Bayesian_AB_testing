@@ -61,4 +61,13 @@ Here is a historgram of the number of samples taken in each experiment for both 
 ![alt text](https://github.com/prateekpuri01/Bayesian_AB_testing/blob/master/plots/sample_size_comparison.png)
 
 
+As we can see, we dramatically reduce the number of samples needed in our Bayesian approach, while still retaining decent recall (85% vs 78% for Bayesian/frequentist approaches in my simulations). 
+
+What controls how good our recall is for this approach? The epsilon we choose as our expected loss threshold. As we make epsilon smaller, we will need more samples to reach a result but will also have greater statistical power. Here is a plot showing the sample-size/recall tradeoff for my Bayesian simulations 
+
+![alt text](https://github.com/prateekpuri01/Bayesian_AB_testing/blob/master/plots/threshold_comparison.png)
+
+
+
+
 
