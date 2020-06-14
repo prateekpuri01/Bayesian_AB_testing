@@ -69,12 +69,15 @@ What controls how good our recall is for this approach? The epsilon we choose as
 
 ![alt text](https://github.com/prateekpuri01/Bayesian_AB_testing/blob/master/plots/threshold_comparison.png)
 
+Also we can comapre the distributions in number of samples needed to obtain a certain power in Bayesian AB testing to number of samples needed to do so according to frequentist technqiues 
+
+![alt text](https://github.com/prateekpuri01/Bayesian_AB_testing/blob/master/plots/sample_size_comparison.png)
 
 These results could mean that we would save a lot of time and money using Bayesian AB testing over frequentist frameworks. What are some reasons why Bayesian approaches can be advantageous?
 
 1) You need results quick/samples are expensive. For example, in website site design, implementing new features is relatively low-cost and quick, so developers are willing to trade off a higher false positive rate for quicker experiment time to some degree. This is not the case for all situations however. 
 
-2) Probability distributions can be easier to understand than confidence intervals. When explaining results to other, Bayesian approaches may help simplify discussions. 
+2) Probability distributions can be easier to understand than confidence intervals. When explaining results to others, Bayesian approaches may help simplify discussions. 
 
 
 
