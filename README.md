@@ -30,4 +30,4 @@ The tradeoff here is that the smaller sample size comes at the expense of a high
 
 ## Bayesian approaches
 
-Let's compare some simulations to see the benefits/tradeoffs of these two approaches
+Let's compare some simulations to see the benefits/tradeoffs of these two approaches. Let's 
