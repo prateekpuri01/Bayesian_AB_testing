@@ -71,7 +71,7 @@ What controls how good our recall is for this approach? The epsilon we choose as
 
 Also we can comapre the distributions in number of samples needed to obtain a certain power in Bayesian AB testing to number of samples needed to do so according to frequentist technqiues 
 
-![alt text](https://github.com/prateekpuri01/Bayesian_AB_testing/blob/master/plots/sample_size_comparison.png)
+![alt text](https://github.com/prateekpuri01/Bayesian_AB_testing/blob/master/plots/sample_size_comparison_ab.png)
 
 These results could mean that we would save a lot of time and money using Bayesian AB testing over frequentist frameworks. What are some reasons why Bayesian approaches can be advantageous?
 
