@@ -28,6 +28,8 @@ Since these probability distributions are dynamics, if you are testing for diffe
 
 $L=\int \int P(A) P(B) (A-B) dA dB$ 
 
+Due to the (A-B) term here, we see that we are taking into account not just whether A is greater than B at a point in time, but also *how much greater* A is than B. 
+
 In Bayesian AB testing, if this expected loss is less than a pre-determined $\epsilon$, you stop the experiment. Picking $\epsilon$ takes some consideration, but once it is selected your sample size will be whatever is takes to reduce your expected loss to that amount. Did you significantly underestimate your effect size? Not a big problem, the real effect size will become evident in your data and your experiment will stop without requiring additional samples. 
 
 ![alt text](https://github.com/prateekpuri01/Bayesian_AB_testing/blob/master/plots/expected_loss.png)
@@ -40,7 +42,7 @@ The tradeoff here is that the smaller sample size comes at the expense of a high
 
 Let's compare some simulations to see the benefits/tradeoffs of these two approaches. Let's say that we are trying to determine whether a new website increase checkout cart conversion rates. Fot each site version, checkout conversion is essentially a Bernoulli process with an unknwown success rate. In our frequentist approach, we can use CLT to convert the hypothesis test into an effective Z-test, whereas for the Bayesian approach, we will model our system with an uninformative Beta prior and use our samples to update the prior. 
 
-Let's say our base conversion rate is .02% and we expect a 20% increase due to the new site, we want alpha=.95 with a power=0.8. Using these values, we would need over 100000 samples to reach a conduct a frequentist AB test. 
+Let's say our base conversion rate is .02% and we expect a 20% increase due to the new site, we want alpha=.95 with a power=0.8. Using these values, we would need over 250000 samples to reach a conduct a proper frequentist AB test. 
 
 Let's say we do that. Now let's use our Bayesian AB test and perform the same experiment, and now let's compare the results
 
@@ -67,6 +69,12 @@ What controls how good our recall is for this approach? The epsilon we choose as
 
 ![alt text](https://github.com/prateekpuri01/Bayesian_AB_testing/blob/master/plots/threshold_comparison.png)
 
+
+These results could mean that we would save a lot of time and money using Bayesian AB testing over frequentist frameworks. What are some reasons why Bayesian approaches can be advantageous?
+
+1) You need results quick/samples are expensive. For example, in website site design, implementing new features is relatively low-cost and quick, so developers are willing to trade off a higher false positive rate for quicker experiment time to some degree. This is not the case for all situations however. 
+
+2) Probability distributions can be easier to understand than confidence intervals. When explaining results to other, Bayesian approaches may help simplify discussions. 
 
 
 
